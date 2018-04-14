@@ -1,0 +1,2 @@
+class FeedEntry < ApplicationRecord
+end
