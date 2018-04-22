@@ -46,3 +46,6 @@ dump.rdb
 /public/packs
 /public/packs-test
 /node_modules
+
+# Ignore vscode files
+.vscode/*
