@@ -44,13 +44,17 @@ gem 'jwt', '~> 2.1'
 
 gem 'activeadmin', '~> 1.3'
 
+gem 'arctic_admin'
+
+# Yes, i want to do this in production
+gem 'factory_bot_rails'
+gem 'faker'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rubocop', '0.50.0'
   gem 'rubocop-rspec', '1.10.0'
-  gem 'factory_bot_rails'
-  gem 'faker'
   gem 'dotenv-rails'
 end
 
