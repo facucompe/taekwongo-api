@@ -1,4 +1,6 @@
 ActiveAdmin.register Feed do
+  permit_params :title, :picture_url, :category, :body
+
   index do
     id_column
     column :title
