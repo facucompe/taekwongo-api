@@ -24,6 +24,7 @@ HasAndBelongsToMany:
 Metrics/BlockLength:
   Exclude:
     - spec/**/*
+    - app/admin/**/*
 
 Style/FrozenStringLiteralComment:
   Enabled: false

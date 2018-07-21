@@ -4,9 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :name, uniqueness: true, case_sensitive: false
   validates :email, format: Devise.email_regexp
-  validates :name, :email, presence: true
+  validates :first_name, :last_name, :gender, :email, presence: true
+
+  enum gender: { male: 0, female: 1 }
 
   before_validation :generate_verification_code, on: :create
 
