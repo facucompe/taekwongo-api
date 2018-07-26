@@ -1,4 +1,4 @@
 class Competition < ApplicationRecord
-  validates :title, :date, :city, presence: true
-  enum category: { G1G2: 0, GP: 1, JJOO: 1, TMA: 2 }
+  validates :name, :start_date, :city, presence: true
+  enum category: { G1G2: 1, GP: 2, JJOO: 3, TMA: 4 }
 end
