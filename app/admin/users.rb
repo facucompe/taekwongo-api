@@ -1,26 +1,25 @@
 ActiveAdmin.register User do
-  permit_params :email, :name, :country, :province, :postal_code, :address,
-                :password, :password_confirmation
+  permit_params :email, :first_name, :last_name, :country, :province, :birth_date,
+                :postal_code, :address, :password, :password_confirmation
 
   index do
     id_column
     column :email
-    column :name
+    column :first_name
+    column :last_name
+    column :birth_date
     column :country
-    column :province
-    column :postal_code
-    column :address
     actions
   end
 
   form do |f|
     f.inputs 'User' do
       f.input :email
-      f.input :name
+      f.input :first_name
+      f.input :last_name
+      f.input :gender
+      f.input :birth_date, as: :date_picker
       f.input :country, as: :select, collection: countries
-      f.input :province
-      f.input :postal_code
-      f.input :address
       f.input :password
       f.input :password_confirmation
     end
