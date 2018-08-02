@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     end
   end
   resources :feeds, only: [:index]
+  resources :competitions, only: [:index]
   devise_for :users
 end
