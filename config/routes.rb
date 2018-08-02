@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  devise_for :users
   root to: 'admin/dashboard#index'
-
-  resources :users, only: [] do
+  
+  resources :users, only: [:create] do
     collection do
       resources :sessions, only: [:create] do
         collection do
@@ -15,4 +14,5 @@ Rails.application.routes.draw do
   end
   resources :feeds, only: [:index]
   resources :competitions, only: [:index]
+  devise_for :users
 end
