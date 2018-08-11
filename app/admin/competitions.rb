@@ -1,10 +1,11 @@
 ActiveAdmin.register Competition do
-  permit_params :name, :start_date, :end_date, :city, :country,:category
+  permit_params :name, :start_date, :end_date, :city, :country, :category
 
   index do
     id_column
     column :name
     column :start_date
+    column :end_date
     column :city
     column :category
     column :created_at
