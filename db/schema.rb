@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_15_012555) do
+ActiveRecord::Schema.define(version: 2018_08_15_031429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,6 +98,12 @@ ActiveRecord::Schema.define(version: 2018_08_15_012555) do
     t.date "birth_date"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "video_techniques", force: :cascade do |t|
+    t.string "title", default: "", null: false
+    t.integer "video_type", default: 0, null: false
+    t.string "link"
   end
 
 end
