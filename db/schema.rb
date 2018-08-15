@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_09_215726) do
+ActiveRecord::Schema.define(version: 2018_08_15_012555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,10 +66,11 @@ ActiveRecord::Schema.define(version: 2018_08_09_215726) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "images", force: :cascade do |t|
+  create_table "file_attachments", force: :cascade do |t|
     t.string "link"
     t.bigint "poomse_id"
-    t.index ["poomse_id"], name: "index_images_on_poomse_id"
+    t.integer "file_type"
+    t.index ["poomse_id"], name: "index_file_attachments_on_poomse_id"
   end
 
   create_table "poomses", force: :cascade do |t|
