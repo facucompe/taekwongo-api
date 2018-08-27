@@ -1,7 +1,6 @@
 class MeasurementsController < ApiController
   def index
-    render json: Measurement.where(training_id:  params.require(:id))
-						 		.order(created_at: :asc)
+    render json: Training.find(params.require(:id)).measurements.order(created_at: :asc)
   end
 end
 
