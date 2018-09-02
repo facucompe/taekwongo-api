@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   end
   resources :feeds, only: [:index]
   resources :competitions, only: [:index]
+  resources :poomses, only:[:index]
   devise_for :users
 end
