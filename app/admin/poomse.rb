@@ -1,5 +1,5 @@
 ActiveAdmin.register Poomse do
-  permit_params :title, file_attachments_attributes: [:link, :file_type]
+  permit_params :title, file_attachments_attributes: %i[id link file_type]
 
   index do
     id_column
@@ -12,11 +12,13 @@ ActiveAdmin.register Poomse do
   show do
     attributes_table do
       row :title
-      panel 'Images' do
+      panel 'Attachment' do
         table_for resource.file_attachments do
           column :link
-          column :image do |image|
-            image_tag(image.link.url)
+          column :image do |attachment|
+            if attachment.image? && attachment.link.present?
+              image_tag(attachment.link.url)
+            end
           end
         end
       end

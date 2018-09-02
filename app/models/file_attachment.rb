@@ -1,5 +1,6 @@
 class FileAttachment < ApplicationRecord
   belongs_to :poomse
-  mount_uploader :link, ImageUploader
+  validates :link, :file_type, presence: true
+  mount_uploader :link, AttachmentUploader
   enum file_type: { image: 0, video: 1 }
 end
