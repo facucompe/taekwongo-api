@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   validates :email, format: Devise.email_regexp
   validates :first_name, :last_name, :gender, :email, presence: true
- has_many :trainings, dependent: :destroy
+  has_many :trainings, dependent: :destroy
 
   enum gender: { male: 0, female: 1 }
 

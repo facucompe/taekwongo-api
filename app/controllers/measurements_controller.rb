@@ -3,5 +3,3 @@ class MeasurementsController < ApiController
     render json: Training.find(params.require(:id)).measurements.order(created_at: :asc)
   end
 end
-
-
