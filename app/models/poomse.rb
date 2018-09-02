@@ -1,5 +1,5 @@
 class Poomse < ApplicationRecord
-  has_many :images, dependent: :destroy
+  has_many :file_attachments, dependent: :destroy
   validates :title, presence: true
-  accepts_nested_attributes_for :images, allow_destroy: true
+  accepts_nested_attributes_for :file_attachments, allow_destroy: true
 end

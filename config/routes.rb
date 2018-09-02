@@ -15,9 +15,11 @@ Rails.application.routes.draw do
   resources :feeds, only: [:index]
   resources :competitions, only: [:index]
   resources :trainings, only: [:index] do
-	member do
-		get :measurements, to: 'measurements#index'
-	end
+    member do
+      get :measurements, to: 'measurements#index'
+    end
   end
+  resources :poomses, only: [:index]
+  resources :video_techniques, only: [:index]
   devise_for :users
 end
