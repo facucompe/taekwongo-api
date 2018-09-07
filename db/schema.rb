@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_15_031429) do
+ActiveRecord::Schema.define(version: 2018_09_06_020929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,12 @@ ActiveRecord::Schema.define(version: 2018_08_15_031429) do
     t.integer "category", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "feed_images", force: :cascade do |t|
+    t.string "link"
+    t.bigint "feed_id"
+    t.index ["feed_id"], name: "index_feed_images_on_feed_id"
   end
 
   create_table "feeds", force: :cascade do |t|
