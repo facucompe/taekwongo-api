@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :trainings, only: [:index, :create] do
     member do
       get :measurements, to: 'measurements#index'
+      post :measurements, to: 'measurements#create'
     end
   end
   resources :poomses, only: [:index]
