@@ -1,12 +1,6 @@
 ActiveAdmin.register Feed do
   permit_params :title, :picture_url, :category, :body, feed_images_attributes: %i[id link]
 
-  def controller
-    def createdat
-      byebug
-    end
-  end
-
   index do
     id_column
     column :title
