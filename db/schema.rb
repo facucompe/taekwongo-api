@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_15_031429) do
+ActiveRecord::Schema.define(version: 2018_08_20_224700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,8 +73,25 @@ ActiveRecord::Schema.define(version: 2018_08_15_031429) do
     t.index ["poomse_id"], name: "index_file_attachments_on_poomse_id"
   end
 
+  create_table "measurements", force: :cascade do |t|
+    t.float "magnitude", default: 0.0, null: false
+    t.bigint "training_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["training_id"], name: "index_measurements_on_training_id"
+  end
+
   create_table "poomses", force: :cascade do |t|
     t.string "title", default: "", null: false
+  end
+
+  create_table "trainings", force: :cascade do |t|
+    t.string "title", default: "", null: false
+    t.bigint "user_id", null: false
+    t.integer "training_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_trainings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
