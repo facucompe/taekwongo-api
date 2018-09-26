@@ -1,5 +1,5 @@
 ActiveAdmin.register Measurement do
-  permit_params :amount, :training_id
+  permit_params :magnitude, :training_id
 
   index do
     id_column
