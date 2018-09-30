@@ -57,6 +57,12 @@ ActiveRecord::Schema.define(version: 2018_09_16_175427) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "feed_images", force: :cascade do |t|
+    t.string "link"
+    t.bigint "feed_id"
+    t.index ["feed_id"], name: "index_feed_images_on_feed_id"
+  end
+
   create_table "feeds", force: :cascade do |t|
     t.string "title", default: "", null: false
     t.string "picture_url", default: "", null: false
