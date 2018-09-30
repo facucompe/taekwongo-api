@@ -22,5 +22,6 @@ Rails.application.routes.draw do
   end
   resources :poomses, only: [:index]
   resources :video_techniques, only: [:index]
+  resources :rulespdf, only: [:index]
   devise_for :users
 end
