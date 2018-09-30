@@ -128,12 +128,5 @@ ActiveRecord::Schema.define(version: 2018_09_06_020929) do
     t.integer "video_type", default: 0, null: false
     t.string "link"
   end
-  
-  create_table "rulespdfs", force: :cascade do |t|
-    t.string "version", null: false
-    t.string "pdf_url", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
 end
