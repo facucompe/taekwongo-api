@@ -3,9 +3,9 @@ class FeedsController < ApiController
 
   def index
     if feed_param[:category].present?
-      render json: Feed.where(category: feed_param[:category])
+      render json: Feed.where(category: feed_param[:category]).order(id: :desc)
     else
-      render json: Feed.all
+      render json: Feed.all.order(id: :desc)
     end
   end
 
