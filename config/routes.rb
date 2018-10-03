@@ -23,5 +23,6 @@ Rails.application.routes.draw do
   resources :poomses, only: [:index]
   resources :video_techniques, only: [:index]
   resources :rulespdf, only: [:index]
+  resources :refeering, only: [:index]
   devise_for :users
 end
