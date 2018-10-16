@@ -5,5 +5,6 @@ ActiveAdmin.register RefeeringImage do
     id_column
     column :link
     column :category
+    actions
   end
 end
