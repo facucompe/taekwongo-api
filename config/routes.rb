@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :sessions, only: [:create] do
         collection do
           post :invalidate_all
+          put :reset_password
         end
       end
     end

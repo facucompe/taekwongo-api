@@ -21,7 +21,16 @@ class SessionsController < ApiController
     end
   end
 
+  def reset_password
+    reset_password_user.send_reset_password_instructions
+    head :ok
+  end
+
   private
+
+  def reset_password_user
+    User.find_by!(email: params.require(:email))
+  end
 
   def render_error(error_message, status)
     render json: { error: error_message }, status: status
