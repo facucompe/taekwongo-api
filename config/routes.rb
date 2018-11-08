@@ -11,6 +11,8 @@ Rails.application.routes.draw do
           put :reset_password
         end
       end
+      put :update
+      get :me
     end
   end
   resources :feeds, only: [:index]
